@@ -1,0 +1,8 @@
+##compiling with -pg flag to get info profiling
+g++ -std=c++11 -O3 -Wall -Wextra -Weffc++ -Wshadow -pedantic -I.. -pg tests.cpp -o tests
+
+##raw profile report
+gprof tests gmon.out
+
+##graphical profiling report with gprof2dot and graphviz
+gprof <your_executable> | gprof2dot | dot -Tpng -o output.png
